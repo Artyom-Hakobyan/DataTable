@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Data from './components/Data';
 import BasicButtonExample from './components/Dropdown';
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <Data />
+      <h1>Data Grid</h1>
       <BasicButtonExample receivedData={receivedData}/>
     </div>
   );
