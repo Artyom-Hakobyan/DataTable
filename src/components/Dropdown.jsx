@@ -21,7 +21,7 @@ const BasicButtonExample = (props) => {
                 </Dropdown.Menu>
             </Dropdown>
             <p>Selected US State: {selectedItem}</p>
-            <DataTable selectedItem={selectedItem}/>
+            <DataTable selectedItem={selectedItem} />
         </>
     );
 };
