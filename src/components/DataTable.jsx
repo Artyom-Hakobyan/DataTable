@@ -14,12 +14,10 @@ const DataTable = (props) => {
             .then(data => setFetchedData(data))
     }
 
-    console.log(fetchedData)
-
     return (
         <div>
             {!props.selectedItem ? null : <Button onClick={handleFetch} style={{ marginBottom: "13px" }}>Get Data for {props.selectedItem}</Button>}
-           <div>
+            <div>
                 <table id="dataTable">
                     <tbody>
                         <tr>
@@ -31,7 +29,7 @@ const DataTable = (props) => {
                         </tr>
                         {fetchedData.map(fetched =>
                             <tr key={uuidv4()}>
-                                <td>{fetched.date}</td>
+                                <td>{String(fetched.date).slice(6, 8) + "/" + String(fetched.date).slice(4, 6) + "/" + String(fetched.date).slice(0, 4)}</td>
                                 <td>{fetched.totalTestResults}</td>
                                 <td>{fetched.positive}</td>
                                 <td>{fetched.recovered}</td>
@@ -40,7 +38,7 @@ const DataTable = (props) => {
                         )}
                     </tbody>
                 </table>
-            </div> 
+            </div>
         </div>
     );
 };
